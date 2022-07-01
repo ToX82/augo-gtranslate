@@ -1,0 +1,108 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "3c21d8b5164de6fdc95914b54ed0d009",
+    "packages": [
+        {
+            "name": "nggit/php-gtranslate-free",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nggit/php-gtranslate-free.git",
+                "reference": "c32a20448b28ecfac680b57746596536cf8f36db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nggit/php-gtranslate-free/zipball/c32a20448b28ecfac680b57746596536cf8f36db",
+                "reference": "c32a20448b28ecfac680b57746596536cf8f36db",
+                "shasum": ""
+            },
+            "require": {
+                "nggit/php-simple-client": ">=1.0",
+                "php": ">=5.3.0"
+            },
+            "conflict": {
+                "nggit/php-google-translate": "*"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nggit\\Google\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nggit",
+                    "email": "contact@anggit.com"
+                }
+            ],
+            "description": "A simple PHP library to translate texts using Google Translate for free",
+            "homepage": "https://github.com/nggit/php-gtranslate-free",
+            "support": {
+                "issues": "https://github.com/nggit/php-gtranslate-free/issues",
+                "source": "https://github.com/nggit/php-gtranslate-free/tree/master"
+            },
+            "time": "2021-02-26T23:45:26+00:00"
+        },
+        {
+            "name": "nggit/php-simple-client",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nggit/php-simple-client.git",
+                "reference": "9ebbc9f13d65cf5228bfd1cf887b669614d5e1e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nggit/php-simple-client/zipball/9ebbc9f13d65cf5228bfd1cf887b669614d5e1e2",
+                "reference": "9ebbc9f13d65cf5228bfd1cf887b669614d5e1e2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nggit\\PHPSimpleClient\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nggit",
+                    "email": "contact@anggit.com"
+                }
+            ],
+            "description": "A Simple and Fast HTTP Client",
+            "homepage": "https://github.com/nggit/php-simple-client",
+            "support": {
+                "issues": "https://github.com/nggit/php-simple-client/issues",
+                "source": "https://github.com/nggit/php-simple-client/tree/v1.0"
+            },
+            "time": "2021-03-06T16:51:38+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "nggit/php-gtranslate-free": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

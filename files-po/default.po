@@ -1,0 +1,224 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2022-06-30 17:12+0200\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: ./src/Controller/Component/PermissionComponent.php:56
+#: ./src/Controller/Component/PermissionComponent.php:60
+msgid "You are not authorized to access that location."
+msgstr ""
+
+#: ./src/Controller/RoutesController.php:48
+#: ./src/Controller/RoutesController.php:138
+#: ./src/Controller/RoutesController.php:169
+#: ./src/Controller/RoutesPointsController.php:32
+#: ./src/Controller/RoutesPointsController.php:51
+#: ./src/Controller/RoutesPointsController.php:106
+#: ./src/Controller/RoutesPointsController.php:158
+msgid "You are not authorized to access this route."
+msgstr ""
+
+#: ./src/Controller/RoutesController.php:77
+msgid "Invalid route."
+msgstr ""
+
+#: ./src/Controller/RoutesController.php:104
+#: ./src/Controller/RoutesController.php:149
+msgid "The route has been saved."
+msgstr ""
+
+#: ./src/Controller/RoutesController.php:108
+#: ./src/Controller/RoutesController.php:153
+msgid "The route could not be saved. Please, try again."
+msgstr ""
+
+#: ./src/Controller/RoutesController.php:176
+msgid "The route has been deleted."
+msgstr ""
+
+#: ./src/Controller/RoutesController.php:178
+msgid "The route could not be deleted. Please, try again."
+msgstr ""
+
+#: ./src/Controller/RoutesPointsController.php:76
+#: ./src/Controller/RoutesPointsController.php:130
+msgid "The routes point has been saved."
+msgstr ""
+
+#: ./src/Controller/RoutesPointsController.php:80
+#: ./src/Controller/RoutesPointsController.php:134
+msgid "The routes point could not be saved. Please, try again."
+msgstr ""
+
+#: ./src/Controller/RoutesPointsController.php:165
+msgid "The routes point has been deleted."
+msgstr ""
+
+#: ./src/Controller/RoutesPointsController.php:167
+msgid "The routes point could not be deleted. Please, try again."
+msgstr ""
+
+#: ./src/Controller/UsersController.php:46
+msgid "Your username or password is incorrect."
+msgstr ""
+
+#: ./src/Controller/UsersController.php:57
+msgid "You are now logged out."
+msgstr ""
+
+#: ./src/Controller/UsersController.php:113
+#: ./src/Controller/UsersController.php:141
+msgid "The data has been saved."
+msgstr ""
+
+#: ./src/Controller/UsersController.php:118
+#: ./src/Controller/UsersController.php:146
+msgid "The data could not be saved. Please, try again."
+msgstr ""
+
+#: ./src/Controller/UsersController.php:165
+msgid "L'indirizzo email non risulta essere registrato"
+msgstr ""
+
+#: ./src/Controller/UsersController.php:189
+msgid "Richiesta cambio password inviata. Controlla la tua email."
+msgstr ""
+
+#: ./src/Controller/UsersController.php:193
+#: ./src/Controller/UsersController.php:242
+msgid "Problema nell'invio della mail"
+msgstr ""
+
+#: ./src/Controller/UsersController.php:215
+msgid "Errore durante l'elaborazione della richiesta"
+msgstr ""
+
+#: ./src/Controller/UsersController.php:238
+msgid "Richiesta cambio password completata."
+msgstr ""
+
+#: ./templates/Routes/add.php:11
+#: ./templates/Routes/index.php:26
+#: ./templates/Routes/view.php:64
+msgid "Actions"
+msgstr ""
+
+#: ./templates/Routes/add.php:12
+msgid "List Routes"
+msgstr ""
+
+#: ./templates/Routes/add.php:19
+msgid "Add Route"
+msgstr ""
+
+#: ./templates/Routes/add.php:26
+#: ./templates/Routes/edit.php:45
+#: ./templates/RoutesPoints/edit.php:49
+#: ./templates/Users/edit.php:40
+msgid "Submit"
+msgstr ""
+
+#: ./templates/Routes/index.php:21
+#: ./templates/Routes/view.php:61
+msgid "Name"
+msgstr ""
+
+#: ./templates/Routes/index.php:22
+msgid "Start date"
+msgstr ""
+
+#: ./templates/Routes/index.php:23
+msgid "Start time"
+msgstr ""
+
+#: ./templates/Routes/index.php:24
+msgid "Notes"
+msgstr ""
+
+#: ./templates/Routes/index.php:25
+msgid "Created"
+msgstr ""
+
+#: ./templates/Routes/index.php:38
+#: ./vendor/cakephp/cakephp/src/View/Helper/PaginatorHelper.php:1260
+msgid "View"
+msgstr ""
+
+#: ./templates/Routes/index.php:39
+#: ./templates/Routes/view.php:99
+#: ./templates/Users/index.php:50
+msgid "Edit"
+msgstr ""
+
+#: ./templates/Routes/index.php:40
+#: ./templates/Routes/view.php:100
+#: ./templates/Users/index.php:51
+msgid "Delete"
+msgstr ""
+
+#: ./templates/Routes/index.php:40
+#: ./templates/Routes/view.php:100
+#: ./templates/Users/index.php:51
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: ./templates/Routes/view.php:42
+msgid "Share route"
+msgstr ""
+
+#: ./templates/Routes/view.php:52
+msgid "Related Routes Points"
+msgstr ""
+
+#: ./templates/Routes/view.php:60
+msgid "Ordering"
+msgstr ""
+
+#: ./templates/Routes/view.php:62
+#: ./templates/RoutesPoints/view.php:25
+msgid "Address"
+msgstr ""
+
+#: ./templates/Routes/view.php:63
+#: ./templates/RoutesPoints/view.php:29
+msgid "Reached"
+msgstr ""
+
+#: ./templates/Routes/view.php:92
+#: ./templates/RoutesPoints/view.php:32
+msgid "No"
+msgstr ""
+
+#: ./templates/Routes/view.php:92
+#: ./templates/RoutesPoints/view.php:34
+msgid "Yes"
+msgstr ""
+
+#: ./templates/RoutesPoints/view.php:21
+msgid "Destination name"
+msgstr ""
+
+#: ./templates/Users/index.php:48
+msgid "Topup"
+msgstr ""
+
+#: ./templates/Users/index.php:49
+msgid "See requests"
+msgstr ""
+
+#: ./templates/layout/error.php:38
+msgid "Back"
+msgstr ""
+
+
