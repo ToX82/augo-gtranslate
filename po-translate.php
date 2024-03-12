@@ -3,24 +3,46 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Nggit\Google\Translate;
 
-// list all files in files-po/*.po
-$files = glob(__DIR__ . '/files-po/*.po');
+// Variabile per memorizzare l'eventuale errore nell'input dell'utente
+$error = '';
 
-foreach ($files as $file) {
-    parseFile($file);
+// Se è stato inviato un file da tradurre
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_FILES['file']['error'] === UPLOAD_ERR_OK) {
+        $file_tmp = $_FILES['file']['tmp_name'];
+        $file_name = $_FILES['file']['name'];
+
+        // Controlla se il file è un file .pot
+        $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+        if (!in_array($file_ext, ['po', 'pot'])) {
+            echo '<p style="color: darkred;">Il file deve essere un file .po oppure .pot</p>';
+            showPage();
+        } else {
+            $data = parseFile($file_tmp);
+            download($data['content'], $file_name);
+        }
+    } else {
+        $error = 'Si è verificato un errore durante il caricamento del file.';
+    }
+} else {
+    showPage();
 }
 
-function parseFile($file)
+function parseFile($file_tmp)
 {
     $translate = new Translate(array('lang' => array('en' => 'it')));
-    $lines = file($file);
+    $lines = file($file_tmp);
     $translation = '';
     $content = [];
+    $toTranslate = '';
+    $translations = 0;
 
     foreach ($lines as $pos => $line) {
         $content[$pos] = trim($line);
         if (strpos($line, 'msgid "') !== false) {
-            $text = str_replace('msgid "', '', $line);
+            $toTranslate = $line;
+        } elseif (strpos($line, 'msgstr ""') !== false) {
+            $text = str_replace('msgid "', '', $toTranslate);
             $text = trim($text);
             $text = rtrim($text, '"');
             $text = trim($text, '"');
@@ -33,28 +55,58 @@ function parseFile($file)
                 }
                 $translation = trim($translation);
 
-                echo_live("\nTesto: " . $text);
-                echo_live("\nTraduzione: " . $translation);
-                echo_live("\n");
+                $content[$pos] = 'msgstr "' . $translation . '"';
+                $translations++;
             }
-        } elseif (strpos($line, 'msgstr ""') !== false) {
-            // write the translation in the file, in the same position
-            $content[$pos] = 'msgstr "' . $translation . '"';
         }
     }
 
     $content = implode("\n", $content);
-    file_put_contents($file . "_trad", $content);
+
+    return [
+        'content' => $content,
+        'translations' => $translation
+    ];
 }
 
-function echo_live($txt)
+function download($content, $file_name)
 {
-    // inizializzazione del buffer per l'output
-    if (ob_get_level() == 0) {
-        ob_start();
-    }
-    echo $txt;
-    // invia il contenuto al buffer
-    ob_flush();
-    flush();
+
+    // Forza il download del file
+    header('Content-Description: File Transfer');
+    header('Content-Type: application/octet-stream');
+    header('Content-Disposition: attachment; filename="' . basename($file_name) . '"');
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate');
+    header('Pragma: public');
+    header('Content-Length: ' . strlen($content));
+    
+    // Output del contenuto del file tradotto
+    echo $content;
+    exit;
+}
+
+function showPage()
+{
+    $page = <<<EOT
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Traduzione File .po / .pot</title>
+    </head>
+    <body>
+        <h1>Traduzione File .po / .pot</h1>
+
+        <form method="post" enctype="multipart/form-data" action="">
+            <label for="file">Seleziona il file da tradurre:</label><br>
+            <input type="file" id="file" name="file" accept=".po, .pot"><br>
+            <small>Esempio: nomefile.pot</small><br><br>
+            <input type="submit" value="Traduci">
+        </form>
+    </body>
+    </html>
+    EOT;
+    echo $page;
 }
